@@ -28,4 +28,3 @@ class ISAtab2CEDARTest(TestCase):
                                            os.path.join(self._data_dir, "metabolights"), False)
         print("\t... done")
 
-

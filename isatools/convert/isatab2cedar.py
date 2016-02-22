@@ -36,7 +36,7 @@ class ISATab2CEDAR():
         validator = Draft4Validator(schema, resolver=resolver)
 
         isa_tab = parse(work_dir)
-        #print(isa_tab)
+        print("ISATab", isa_tab)
 
         if isa_tab is None:
             print("No ISAtab dataset found")
@@ -483,8 +483,11 @@ class ISATab2CEDAR():
 
 
 #local tests
-#isa2cedar = ISATab2CEDAR("Metabolights")
-#isa2cedar.createCEDARjson("../../tests/data/BII-I-1", "./schemas/cedar", True)
+
+if __name__ == '__main__':
+    isa2cedar = ISATab2CEDAR("Metabolights")
+    isa2cedar.createCEDARjson("./tests/data/BII-I-1", "./isatools/schemas/cedar", True)
+    
 #isa2cedar.createCEDARjson("../../tests/datasets/ftp.ebi.ac.uk/pub/databases/metabolights/studies/public/MTBLS114", "../../tests/datasets/metabolights", False)
 #isa2cedar.createCEDARjson("../../tests/datasets/ftp.ebi.ac.uk/pub/databases/metabolights/studies/public/MTBLS1", "../../tests/datasets/metabolights", False)
 #isa2cedar.createCEDARjson("../../tests/datasets/ftp.ebi.ac.uk/pub/databases/metabolights/studies/public/MTBLS10", "../../tests/datasets/metabolights", False)
